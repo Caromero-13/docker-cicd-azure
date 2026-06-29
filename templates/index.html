@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ruleta - Sorteo</title>
+    <link rel="stylesheet" href="/static/css/style.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Ruleta de Sorteo</h1>
+
+      <section class="controls">
+        <label>Participantes (una por línea)</label>
+        <textarea id="participants" placeholder="Carlos\nMaría\nLuis"></textarea>
+        <div class="buttons">
+          <button id="drawBtn">Dibujar rueda</button>
+          <button id="spinBtn">Girar</button>
+        </div>
+      </section>
+
+      <section class="wheel-area">
+        <div id="wheelContainer">
+          <canvas id="wheel" width="500" height="500"></canvas>
+          <div id="pointer">▼</div>
+        </div>
+        <div id="result" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <script src="/static/js/wheel.js"></script>
+  </body>
+</html>
