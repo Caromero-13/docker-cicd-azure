@@ -8,7 +8,7 @@ on:
 
 env: 
   # Cambia 'caromero' si el laboratorio te obligó a usar otro nombre único
-  REGISTRY_NAME: caromero.azurecr.io/repo/appimg
+  IMAGE_NAME: caromero.azurecr.io/repo/appimg
  
 
 jobs:
