@@ -26,7 +26,7 @@ jobs:
           password: ${{ secrets.ACR_PASSWORD }}
 
       - name: Build and push Docker image
-        uses: docker/build-push-action@v7
+        uses: azure/webapps-deploy@v2
         with:
           context: .
           tags: |
