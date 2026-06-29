@@ -49,3 +49,10 @@ jobs:
           cache-to: |
             type=gha,mode=max
             type=registry,ref=${{ env.IMAGE_NAME }}:buildcache,mode=max
+      - name: webapp deploy
+        uses: azure/webapps-deploy@v2
+        with:
+            app-name: caromeroapp
+            slot-name: Production
+            publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE}}
+            images: ${{ env.IMAGE_NAME }}:latest
