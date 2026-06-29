@@ -138,8 +138,7 @@ Habilite el usuario administrador del registro y obtenga usuario/contraseña:
 ```bash
 az acr update -n $ACR_NAME --admin-enabled true -g $RESOURCE_GROUP
 
-az acr credential show -n $ACR_NAME -g $RESOURCE_GROUP \
-  --query "{username:username, password:passwords[0].value}" -o json
+az acr credential show -n $ACR_NAME -g $RESOURCE_GROUP --query "{username:username, password:passwords[0].value}" -o json
 ```
 
 Anote el `loginServer` del ACR:
