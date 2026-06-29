@@ -33,11 +33,13 @@ jobs:
           password: ${{ secrets.ACR_PASSWORD }}
 
       # CORREGIDO: Se usa docker/build-push-action para subir al ACR
-      - name: Build and push Docker image
-        uses: docker/build-push-action@v5
+      - name: Build and Push Docker Image
+        uses: docker/build-push-action@v7
         with:
           context: .
-          push: true
+          build-args: |
+            BUILD_TAG=v${{ github.run_number }}
           tags: |
-            ${{ env.REGISTRY_NAME }}/${{ env.IMAGE_NAME }}:${{ github.run_number }}
-            ${{ env.REGISTRY_NAME }}/${{ env.IMAGE_NAME }}:latest
+            ${{ env.IMAGE_NAME }}:v${{ github.run_number }}
+            ${{ env.IMAGE_NAME }}:latest
+          push: true
