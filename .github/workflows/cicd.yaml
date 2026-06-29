@@ -40,7 +40,7 @@ jobs:
           build-args: |
             BUILD_TAG=v${{ github.run_number }}
           tags: |
-            ${{ env.IMAGE_NAME }}:v${{ github.run_number }}
+            ${{ env.IMAGE_NAME }}v${{ github.run_number }}
             ${{ env.IMAGE_NAME }}:latest
           push: true
           cache-from: |
