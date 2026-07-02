@@ -55,3 +55,9 @@ docker-compose.override.yml
 # Environment variables
 .env
 *.env
+
+# Terraform locales y estados
+*.tfstate
+*.tfstate.backup
+.terraform/
+.terraform.lock.hcl
